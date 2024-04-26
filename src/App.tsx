@@ -5,9 +5,10 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -25,35 +26,35 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+// type SectionProps = PropsWithChildren<{
+//   title: string;
+// }>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+// function Section({children, title}: SectionProps): React.JSX.Element {
+//   const isDarkMode = useColorScheme() === 'dark';
+//   return (
+//     <View style={styles.sectionContainer}>
+//       <Text
+//         style={[
+//           styles.sectionTitle,
+//           {
+//             color: isDarkMode ? Colors.white : Colors.black,
+//           },
+//         ]}>
+//         {title}
+//       </Text>
+//       <Text
+//         style={[
+//           styles.sectionDescription,
+//           {
+//             color: isDarkMode ? Colors.light : Colors.dark,
+//           },
+//         ]}>
+//         {children}
+//       </Text>
+//     </View>
+//   );
+// }
 
 // function App(): React.JSX.Element {
 //   const isDarkMode = useColorScheme() === 'dark';
@@ -117,46 +118,46 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 // export default App;
 
-const styles = StyleSheet.create({
-  center: {
-    alignItems: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   center: {
+//     alignItems: 'center',
+//   },
+// });
 
-type GreetingProps = {
-  name: string;
-};
+// type GreetingProps = {
+//   name: string;
+// };
 
-const Greeting = (props: GreetingProps) => {
-  return (
-    <View>
-      <Text>Hello {props.name}!</Text>
-    </View>
-  );
-};
-
-const LotsOfGreetings = () => {
-  return (
-    <View style={[styles.center, {top: 50}]}>
-      <Greeting name="Rexxar" />
-      <Greeting name="Jaina" />
-      <Greeting name="Valeera" />
-    </View>
-  );
-};
-
-export default LotsOfGreetings;
-
-// const HelloWorldApp = () => {
+// const Greeting = (props: GreetingProps) => {
 //   return (
-//     <View
-//       style={{
-//         flex: 1,
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//       }}>
-//       <Text>Hello, to Saurabh's React nativeworld!</Text>
+//     <View>
+//       <Text>Hello {props.name}!</Text>
 //     </View>
 //   );
 // };
-// export default HelloWorldApp;
+
+// const LotsOfGreetings = () => {
+//   return (
+//     <View style={[styles.center, {top: 50}]}>
+//       <Greeting name="Rexxar" />
+//       <Greeting name="Jaina" />
+//       <Greeting name="Valeera" />
+//     </View>
+//   );
+// };
+// export default LotsOfGreetings;
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <View>
+      <Text> You clicked {count} times</Text>
+      <Button
+        onPress={ () => setCount(count + 1)}
+        title='Click here!!!!'
+      ></Button>
+    </View>
+  )
+}
+export default App;

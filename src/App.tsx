@@ -147,17 +147,51 @@ import {
 // };
 // export default LotsOfGreetings;
 
-const App = () => {
-  const [count, setCount] = useState(0);
+// const App = () => {
+//   const [count, setCount] = useState(0);
 
+//   return (
+//     <View>
+//       <Text> You clicked {count} times</Text>
+//       <Button
+//         onPress={ () => setCount(count + 1)}
+//         title='Click here!!!!'
+//       ></Button>
+//     </View>
+//   )
+// }
+// export default App;
+
+
+const LotsOfStyles = () => {
   return (
-    <View>
-      <Text> You clicked {count} times</Text>
-      <Button
-        onPress={ () => setCount(count + 1)}
-        title='Click here!!!!'
-      ></Button>
+    <View style={styles.containerView}>
+      <Text style={styles.red}>just red</Text>
+      <Text style={styles.bigBlue}>just bigBlue</Text>
+      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
+      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
+      <Text style={styles.italicGreen}>Italic Green</Text>
     </View>
-  )
-}
-export default App;
+  );
+};
+
+const styles = StyleSheet.create({
+  containerView: {
+    marginTop: 100,
+  },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  },
+  italicGreen: {
+    color: 'green',
+    fontStyle: 'italic',
+    fontSize: 20,
+  }
+});
+
+export default LotsOfStyles;

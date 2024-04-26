@@ -117,17 +117,46 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 // export default App;
 
+const styles = StyleSheet.create({
+  center: {
+    alignItems: 'center',
+  },
+});
 
-const HelloWorldApp = () => {
+type GreetingProps = {
+  name: string;
+};
+
+const Greeting = (props: GreetingProps) => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Hello, to Saurabh's React nativeworld!</Text>
+    <View>
+      <Text>Hello {props.name}!</Text>
     </View>
   );
 };
-export default HelloWorldApp;
+
+const LotsOfGreetings = () => {
+  return (
+    <View style={[styles.center, {top: 50}]}>
+      <Greeting name="Rexxar" />
+      <Greeting name="Jaina" />
+      <Greeting name="Valeera" />
+    </View>
+  );
+};
+
+export default LotsOfGreetings;
+
+// const HelloWorldApp = () => {
+//   return (
+//     <View
+//       style={{
+//         flex: 1,
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//       }}>
+//       <Text>Hello, to Saurabh's React nativeworld!</Text>
+//     </View>
+//   );
+// };
+// export default HelloWorldApp;

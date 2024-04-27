@@ -163,21 +163,24 @@ import {
 // export default App;
 
 
-const LotsOfStyles = () => {
-  return (
-    <View style={styles.containerView}>
-      <Text style={styles.red}>just red</Text>
-      <Text style={styles.bigBlue}>just bigBlue</Text>
-      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
-      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
-      <Text style={styles.italicGreen}>Italic Green</Text>
-    </View>
-  );
-};
+// const LotsOfStyles = () => {
+//   return (
+//     <View style={styles.containerView}>
+//       <Text style={styles.red}>just red</Text>
+//       <Text style={styles.bigBlue}>just bigBlue</Text>
+//       <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
+//       <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
+//       <Text style={styles.italicGreen}>Italic Green</Text>
+//     </View>
+//   );
+// };
 
 const styles = StyleSheet.create({
   containerView: {
-    marginTop: 100,
+    flex: 1,
+    marginTop: 10,
+    padding: 20,
+    backgroundColor: 'aliceblue',
   },
   bigBlue: {
     color: 'blue',
@@ -194,4 +197,21 @@ const styles = StyleSheet.create({
   }
 });
 
-export default LotsOfStyles;
+// export default LotsOfStyles;
+
+const Flex = () => {
+  return (
+    <View
+    style={[
+      styles.containerView, {
+        flexDirection: 'row-reverse',
+      },
+    ]}>
+      <View style={{flex: 1, backgroundColor: 'red'}} />
+      <View style={{flex: 2, backgroundColor: 'green'}}/>
+      <View style={{flex: 3, backgroundColor: 'blue'}}/>
+      </View>
+  )
+
+}
+export default Flex;

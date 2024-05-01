@@ -10,23 +10,31 @@ const Onboarding = () => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
-            flexGrow: 1,            // all the available vertical space will be occupied by it
-            justifyContent: 'space-between' // will create the gutter between body and footer
+            justifyContent: 'space-between'
+        },
+        imageContainer: {
+             marginTop: 120,
+             alignItems: 'center',
+             justifyContent: 'center'
         },
         text: {
-            alignItems: 'center',
-            justifyContent: 'center',
+            textAlign: 'center',
             color: 'green',
             fontWeight: 'bold',
             fontSize: 30,
+            marginTop: 30,
+            marginBottom: 30,
+        },
+        buttonContainer: {
+            paddingLeft: 40,
+            paddingRight: 40,
         },
         button: {
             alignItems: 'center',
             justifyContent: 'center',
             paddingVertical: 12,
             paddingHorizontal: 32,
-            borderRadius: 4,
-            elevation: 3,
+            borderRadius: 20,
             backgroundColor: 'green',
         },
         loginButton: {
@@ -40,26 +48,27 @@ const Onboarding = () => {
             letterSpacing: 0.25,
             color: 'white',
         },
+
     });
 
     return (
-        <View 
-        style={styles.container}>
-            <View style={{flex: 10}}>
-                <Image style= {{flex:1 , width: undefined, height: undefined}}
+        <View style={styles.container}>
+            <View style={styles.imageContainer}>
+            <Image
                 source={require('/Users/saurabhdutta/Documents/GitHub/TrackYourExpenses/assets/onboarding.png')} />
-            </View>
-            <View style={{flex: 6}}>
-                <Text
-                    style={styles.text}
-                > {heading}
-                </Text>
-                <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.buttonText}>Getting Started</Text>
-                </Pressable>
-                <Pressable style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
-                    <Text>Already Have Account? Login</Text>
-                </Pressable>
+                </View>
+
+            <View style={styles.buttonContainer}>
+            <Text
+                style={styles.text}
+            > {heading}
+            </Text>
+            <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
+                <Text style={styles.buttonText}>Getting Started</Text>
+            </Pressable>
+            <Pressable style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
+                <Text>Already have an account? Login</Text>
+            </Pressable>
             </View>
         </View>
     )

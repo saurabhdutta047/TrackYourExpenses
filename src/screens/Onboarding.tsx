@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { Alert, Button, Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
 const Onboarding = () => {
     const navigation = useNavigation()
@@ -13,9 +13,9 @@ const Onboarding = () => {
             justifyContent: 'space-between'
         },
         imageContainer: {
-             marginTop: 120,
-             alignItems: 'center',
-             justifyContent: 'center'
+            marginTop: 120,
+            alignItems: 'center',
+            justifyContent: 'center'
         },
         text: {
             textAlign: 'center',
@@ -54,21 +54,21 @@ const Onboarding = () => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-            <Image
-                source={require('/Users/saurabhdutta/Documents/GitHub/TrackYourExpenses/assets/onboarding.png')} />
-                </View>
+                <Image
+                    source={require('/Users/saurabhdutta/Documents/GitHub/TrackYourExpenses/assets/onboarding.png')} />
+            </View>
 
             <View style={styles.buttonContainer}>
-            <Text
-                style={styles.text}
-            > {heading}
-            </Text>
-            <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
-                <Text style={styles.buttonText}>Getting Started</Text>
-            </Pressable>
-            <Pressable style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
-                <Text>Already have an account? Login</Text>
-            </Pressable>
+                <Text
+                    style={styles.text}
+                > {heading}
+                </Text>
+                <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
+                    <Text style={styles.buttonText}>Getting Started</Text>
+                </Pressable>
+                <Pressable style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
+                    <Text>Already have an account? Login</Text>
+                </Pressable>
             </View>
         </View>
     )

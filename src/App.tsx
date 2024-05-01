@@ -3,6 +3,7 @@ import * as React from 'react';
 import Onboarding from './screens/Onboarding';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './screens/Login';
+import Home from './screens/Home';
 
 export type RootStackParamsList = {
   Onboarding: undefined,
@@ -23,6 +24,10 @@ const App = () => {
         <Stack.Screen
           name="Login"
           component={Login}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
         />
       </Stack.Navigator>
     </NavigationContainer>

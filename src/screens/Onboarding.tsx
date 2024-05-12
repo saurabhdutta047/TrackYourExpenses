@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Onboarding = () => {
     const navigation = useNavigation()
@@ -36,10 +37,7 @@ const Onboarding = () => {
             paddingHorizontal: 32,
             borderRadius: 20,
             backgroundColor: 'green',
-        },
-        loginButton: {
-            alignItems: 'center',
-            paddingVertical: 25,
+            marginBottom: 20,
         },
         buttonText: {
             fontSize: 16,
@@ -52,7 +50,7 @@ const Onboarding = () => {
     });
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.imageContainer}>
                 <Image
                     source={require('/Users/saurabhdutta/Documents/GitHub/TrackYourExpenses/assets/onboarding.png')} />
@@ -64,13 +62,13 @@ const Onboarding = () => {
                 > {heading}
                 </Text>
                 <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.buttonText}>Getting Started</Text>
+                    <Text style={styles.buttonText}>Login</Text>
                 </Pressable>
-                <Pressable style={styles.loginButton} onPress={() => navigation.navigate('Login')}>
-                    <Text>Already have an account? Login</Text>
+                <Pressable style={styles.button} onPress={() => navigation.navigate('Signup')}>
+                    <Text style={styles.buttonText}>Sign up</Text>
                 </Pressable>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

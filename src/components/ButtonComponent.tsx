@@ -1,5 +1,25 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 20,
+        backgroundColor: 'green',
+        marginTop: 30
+    },
+    text: {
+        fontSize: 16,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'white',
+    },
+});
+
+
 const ButtonComponent = (props) => {
     return (
         <Pressable
@@ -25,25 +45,5 @@ const ButtonComponent = (props) => {
         </Pressable>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 20,
-        backgroundColor: 'green',
-        marginTop: 30
-    },
-    text: {
-        fontSize: 16,
-        lineHeight: 21,
-        fontWeight: 'bold',
-        letterSpacing: 0.25,
-        color: 'white',
-    },
-});
-
 export default ButtonComponent;
 

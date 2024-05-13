@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import ButtonComponent from '../components/ButtonComponent';
-
+import TextFieldComponent from '../components/TextFieldComponent';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -17,26 +17,6 @@ const styles = StyleSheet.create({
   },
   descriptiontext: {
     marginTop: 10,
-  },
-  inputContainer: {
-    marginTop: 20,
-  },
-  labels: {
-    fontSize: 15,
-    color: "#7d7d7d",
-    marginTop: 10,
-    marginBottom: 5,
-    lineHeight: 20,
-    fontFamily: 'regular',
-  },
-  inputStyles: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.3)',
-    paddingHorizontal: 15,
-    paddingVertical: 7,
-    borderRadius: 1,
-    fontFamily: 'regular',
-    fontSize: 18
   }
 });
 
@@ -47,21 +27,10 @@ const Login = () => {
     <View style={styles.container}>
       <Text style={styles.headingText}> Login Form</Text>
       <Text style={styles.descriptiontext}> You can reach us anytime via saurabh23july@gmail.com</Text>
-      <View style={styles.inputContainer}>
-        <Text style={styles.labels}> Enter your username</Text>
-        <TextInput style={styles.inputStyles}
-          autoCapitalize='none'
-          autoCorrect={false}
-        />
-      </View>
-      <View style={styles.inputContainer}>
-        <Text style={styles.labels}> Enter your password</Text>
-        <TextInput style={styles.inputStyles}
-          autoCapitalize='none'
-          autoCorrect={false}
-          secureTextEntry={true}
-        />
-      </View>
+
+      <TextFieldComponent name="Enter Your Username" type="default" secureTextEntry={false}></TextFieldComponent>
+      <TextFieldComponent name="Enter Your Password" type="default" secureTextEntry={true}></TextFieldComponent>
+
       <ButtonComponent
         onPress={loginPressed}>
         Login

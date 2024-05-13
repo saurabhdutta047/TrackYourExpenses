@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import ButtonComponent from '../components/ButtonComponent';
 
 const Onboarding = () => {
     const navigation = useNavigation()
@@ -27,26 +28,11 @@ const Onboarding = () => {
             marginBottom: 30,
         },
         buttonContainer: {
-            paddingLeft: 40,
-            paddingRight: 40,
+            flex: 1,
+            marginLeft: 20,
+            marginRight: 20,
+            justifyContent: 'center'
         },
-        button: {
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingVertical: 12,
-            paddingHorizontal: 32,
-            borderRadius: 20,
-            backgroundColor: 'green',
-            marginBottom: 20,
-        },
-        buttonText: {
-            fontSize: 16,
-            lineHeight: 21,
-            fontWeight: 'bold',
-            letterSpacing: 0.25,
-            color: 'white',
-        },
-
     });
 
     return (
@@ -61,12 +47,14 @@ const Onboarding = () => {
                     style={styles.text}
                 > {heading}
                 </Text>
-                <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.buttonText}>Login</Text>
-                </Pressable>
-                <Pressable style={styles.button} onPress={() => navigation.navigate('Signup')}>
-                    <Text style={styles.buttonText}>Sign up</Text>
-                </Pressable>
+                <ButtonComponent
+                    onPress={() => navigation.navigate('Login')}>
+                    Login
+                </ButtonComponent>
+                <ButtonComponent
+                    onPress={() => navigation.navigate('Signup')}>
+                    Sign up
+                </ButtonComponent>
             </View>
         </SafeAreaView>
     )

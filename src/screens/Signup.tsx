@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import ButtonComponent from '../components/ButtonComponent';
 
 const styles = StyleSheet.create({
   container: {
@@ -37,24 +38,7 @@ const styles = StyleSheet.create({
     borderRadius: 1,
     fontFamily: 'regular',
     fontSize: 18
-  },
-  button: {
-    marginTop: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 20,
-    backgroundColor: 'green',
-  },
-  buttonText: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white',
-  },
-
+  }
 });
 
 const Signup = () => {
@@ -104,10 +88,10 @@ const Signup = () => {
           keyboardType='phone-pad'
         />
       </View>
-      <Pressable style={styles.button} onPress={signupPressed}>
-        <Text style={styles.buttonText}>Sign up</Text>
-      </Pressable>
-
+      <ButtonComponent
+        onPress={signupPressed}>
+        Sign up
+      </ButtonComponent>
     </SafeAreaView>
   )
 

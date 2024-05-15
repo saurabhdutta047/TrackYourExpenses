@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ButtonComponent from '../components/ButtonComponent';
 import TextFieldComponent from '../components/TextFieldComponent';
@@ -27,6 +27,7 @@ const Signup = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView automaticallyAdjustKeyboardInsets={true}>
       <Text style={styles.headingText}> Signup Form</Text>
       <Text style={styles.descriptiontext}> You can reach us anytime via saurabh23july@gmail.com</Text>
 
@@ -40,6 +41,7 @@ const Signup = () => {
         onPress={signupPressed}>
         Sign up
       </ButtonComponent>
+      </ScrollView>
     </SafeAreaView>
   )
 

@@ -46,7 +46,9 @@ const Signup = () => {
   )
 
   function signupPressed() {
-    console.log('Signup Pressed')
+    navigation.navigate('Home', {
+      name: 'Welcome to parsing data in the react native application from singup screen',
+    })
   }
 }
 

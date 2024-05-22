@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Home = () => {
+const Home = ({route}) => {
     return (
         <SafeAreaView>
-            <Text>Home</Text>
+            <Text>{route.params.name}</Text>
         </SafeAreaView>
     )
 }

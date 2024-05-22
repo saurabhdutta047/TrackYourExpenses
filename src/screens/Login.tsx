@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import ButtonComponent from '../components/ButtonComponent';
 import TextFieldComponent from '../components/TextFieldComponent';
 const styles = StyleSheet.create({
@@ -39,7 +39,9 @@ const Login = () => {
   )
 
   function loginPressed() {
-    console.log('Login Pressed')
+    navigation.navigate('Home', {
+      name: 'Welcome to parsing data in the react native application',
+    })
   }
 }
 
